@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:vm="clr-namespace:Examen_3.ViewModels"
+             x:Class="Examen_3.Views.VistaAgregar">
+    <ContentPage.BindingContext>
+        <vm:BaseViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout Margin="20,35,20,20">
+            
+            <Image Source="https://www.uth.hn/wp-content/uploads/2020/01/204-300x184.png"
+               HeightRequest="90" />
+            
+            <Entry x:Name="idpago" Text="{Binding Id_pago, Mode=TwoWay}" IsVisible="false" />
+
+            <Entry x:Name="description" Text="{Binding Descripcion, Mode=TwoWay}" Placeholder="Description" />
+            <Entry x:Name="monto" Text="{Binding Monto, Mode=TwoWay}" Placeholder="Description" />
+            <Label  Text="Due Date"></Label>
+            <DatePicker x:Name="DueDate" Date="{Binding DueDate, Mode=TwoWay}" ></DatePicker>
+            
+            <Button Text="Guardar" Command="{Binding cmdAddTask}"  
+                    HeightRequest="50" WidthRequest="250" CornerRadius="60" VerticalOptions="Center" 
+         HorizontalOptions ="Center" BackgroundColor   ="Green"/>
+
+            <Button x:Name="btnFoto" Text="Tomar Foto" Clicked="Button_Clicked" 
+                    HeightRequest="50" WidthRequest="250" CornerRadius="60" VerticalOptions="Center" 
+         HorizontalOptions ="Center" BackgroundColor   ="Blue"/>
+            <Button x:Name="btnlista" Text="Pagos Guardados" Clicked="btnlista_Clicked"
+                    HeightRequest="50" WidthRequest="250" CornerRadius="60" VerticalOptions="Center" 
+         HorizontalOptions ="Center" BackgroundColor   ="Green"/>
+
+            <Button x:Name="btnactualizar" Text="Actualizar" Clicked="btnactualizar_Clicked"
+                    HeightRequest="50" WidthRequest="250" CornerRadius="60" VerticalOptions="Center" 
+         HorizontalOptions ="Center" BackgroundColor   ="Aqua"/>
+
+            <Button  x:Name="btneliminar" Text="Eliminar" Clicked="btneliminar_Clicked" Command="{Binding cmdAddTask1}"
+                     HeightRequest="50" WidthRequest="250" CornerRadius="60" VerticalOptions="Center" 
+         HorizontalOptions ="Center" BackgroundColor   ="Red"/>
+
+            <Image
+            x:Name="image1" HeightRequest="300" WidthRequest="300"
+            ></Image>
+
+           
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
